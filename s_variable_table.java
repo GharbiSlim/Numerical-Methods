@@ -12,6 +12,11 @@ public class s_variable_table
     var_values = new ArrayList<String>();
   }
 
+  public List<String> get_variable_names()
+  {
+    return this.var_names;
+  }
+
   public void add_variable(String variable,String value)
   {
     for(int i=0;i<count;i++)
