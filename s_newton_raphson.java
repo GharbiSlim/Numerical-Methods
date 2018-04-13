@@ -1,3 +1,4 @@
+import Classes.*;
 import java.util.Scanner;
 
 public class s_newton_raphson

@@ -1,3 +1,4 @@
+package Classes;
 import java.util.*;
 
 public class s_variable_table
@@ -32,6 +33,24 @@ public class s_variable_table
     count++;
   }
 
+  public void delete_variable(String variable)
+  {
+    Iterator<String> iter1,iter2;
+    iter1 = var_names.listIterator();
+    iter2 = var_values.listIterator();
+
+    while(iter1.hasNext())
+    {
+      if(iter1.next() == variable)
+      {
+        iter1.remove();
+        iter2.remove();
+        break;
+      }
+      iter2.next();
+    }
+  }
+
   public boolean exist(String variable)
   {
     if(var_names.contains(variable))
@@ -58,4 +77,17 @@ public class s_variable_table
     }
     System.out.println("-----------------------------");
   }
+
+  public boolean compare(s_variable_table t2)
+  {
+    if(this.count != t2.count)
+      return false;
+    for(int i=0;i<this.count;i++)
+    {
+      if(!this.var_values.get(i).equals(t2.var_values.get(i)))
+        return false;
+    }
+    return true;
+  }
+
 }

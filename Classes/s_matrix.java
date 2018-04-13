@@ -1,3 +1,4 @@
+package Classes;
 public class s_matrix
 {
   private int rows,columns;   // can be set only during construction
